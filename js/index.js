@@ -28,3 +28,22 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Fetch error:', error);
     });
 });
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const contentSection = document.getElementById('content');
+
+//   fetch('https://project-php-lumen-api-production.up.railway.app/product')
+//     .then(response => {
+//       if (!response.ok) {
+//         throw new Error('Network response was not ok');
+//       }
+//       return response.json();
+//     })
+//     .then(result => {
+//       console.log(result)
+//     })
+//     .catch(error => {
+//       console.error(error);
+//     });
+// });
