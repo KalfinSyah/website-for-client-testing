@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const npm = params.get('npm');
     const form = document.getElementById('updateForm');
-    const fields = ['npm', 'nama', 'angkatan', 'ipk'];
+    const fields = ['nama', 'angkatan', 'ipk'];
     const payload = new Proxy({}, {
         get(target, prop) {
             return target[prop];
@@ -40,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`https://restful-api-mahasiswa-production.up.railway.app/mahasiswa/${payload.npm}`, {
+            const response = await fetch(`https://restful-api-mahasiswa-production.up.railway.app/mahasiswa/${npm}`, {
                 method: 'PUT',
                 headers: {
                 'Content-Type': 'application/json',
